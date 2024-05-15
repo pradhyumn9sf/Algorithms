@@ -47,5 +47,35 @@ public class execute {
         // 1-2-5-6-7 3-8-9-4
         unionByRankDisjointSet.union(9, 4);
         System.out.println(unionByRankDisjointSet.connected(4, 9));
+
+        PathCompressionOptimizationDisjointSet pathCompressionOptimizationDisjointSet = new PathCompressionOptimizationDisjointSet(10);
+        pathCompressionOptimizationDisjointSet.union(1, 2);
+        pathCompressionOptimizationDisjointSet.union(2, 5);
+        pathCompressionOptimizationDisjointSet.union(5, 6);
+        pathCompressionOptimizationDisjointSet.union(6, 7);
+        pathCompressionOptimizationDisjointSet.union(3, 8);
+        pathCompressionOptimizationDisjointSet.union(8, 9);
+
+        System.out.println(pathCompressionOptimizationDisjointSet.connected(1, 5)); // true
+        System.out.println(pathCompressionOptimizationDisjointSet.connected(5, 7)); // true
+        System.out.println(pathCompressionOptimizationDisjointSet.connected(4, 9)); // false
+        // 1-2-5-6-7 3-8-9-4
+        pathCompressionOptimizationDisjointSet.union(9, 4);
+        System.out.println(pathCompressionOptimizationDisjointSet.connected(4, 9));
+
+        OptimizedPathCompressionUnionByRankDisjointSet optimizedPathCompressionUnionByRankDisjointSet = new OptimizedPathCompressionUnionByRankDisjointSet(10);
+        optimizedPathCompressionUnionByRankDisjointSet.union(1, 2);
+        optimizedPathCompressionUnionByRankDisjointSet.union(2, 5);
+        optimizedPathCompressionUnionByRankDisjointSet.union(5, 6);
+        optimizedPathCompressionUnionByRankDisjointSet.union(6, 7);
+        optimizedPathCompressionUnionByRankDisjointSet.union(3, 8);
+        optimizedPathCompressionUnionByRankDisjointSet.union(8, 9);
+
+        System.out.println(optimizedPathCompressionUnionByRankDisjointSet.connected(1, 5)); // true
+        System.out.println(optimizedPathCompressionUnionByRankDisjointSet.connected(5, 7)); // true
+        System.out.println(optimizedPathCompressionUnionByRankDisjointSet.connected(4, 9)); // false
+        // 1-2-5-6-7 3-8-9-4
+        optimizedPathCompressionUnionByRankDisjointSet.union(9, 4);
+        System.out.println(optimizedPathCompressionUnionByRankDisjointSet.connected(4, 9));
     }
 }
