@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Algos" target="13" />
+      <module name="Algos.main" target="13" />
+      <module name="Algos.test" target="13" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
