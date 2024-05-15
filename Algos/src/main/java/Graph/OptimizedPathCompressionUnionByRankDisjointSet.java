@@ -26,9 +26,9 @@ public class OptimizedPathCompressionUnionByRankDisjointSet {
         int rootY = find(y);
 
         if (rootX != rootY) {
-            if (rank[x] > rank[y]) {
+            if (rank[rootX] > rank[rootY]) {
                 root[rootY] = rootX;
-            } else if (rank[x] < rank[y]) {
+            } else if (rank[rootX] < rank[rootY]) {
                 root[rootX] = rootY;
             } else {
                 root[rootY] = rootX;
