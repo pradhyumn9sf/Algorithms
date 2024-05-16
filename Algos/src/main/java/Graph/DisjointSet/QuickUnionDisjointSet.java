@@ -1,9 +1,8 @@
-package Graph;
+package Graph.DisjointSet;
 
-public class PathCompressionOptimizationDisjointSet {
+public class QuickUnionDisjointSet {
     private int[] root;
-
-    public PathCompressionOptimizationDisjointSet(int size) {
+    public QuickUnionDisjointSet(int size) {
         root = new int[size];
         for (int i = 0; i < size; i++) {
             root[i] = i;
@@ -11,22 +10,21 @@ public class PathCompressionOptimizationDisjointSet {
     }
 
     public int find(int x) {
-        if (x == root[x]) {
-            return x;
+        while (x != root[x]) {
+            x = root[x];
         }
-        return root[x] = find(root[x]);
+        return x;
     }
 
     public void union(int x, int y) {
         int rootX = find(x);
         int rootY = find(y);
-
         if (rootX != rootY) {
             root[rootY] = rootX;
         }
     }
 
-    public boolean connected(int x, int y) {
+    boolean connected(int x, int y) {
         return find(x) == find(y);
     }
 }

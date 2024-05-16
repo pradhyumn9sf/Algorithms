@@ -1,12 +1,13 @@
-package Graph;
+package Graph.DisjointSet;
 
-public class UnionByRankDisjointSet {
+public class OptimizedPathCompressionUnionByRankDisjointSet {
     private int[] root;
     private int[] rank;
 
-    public UnionByRankDisjointSet(int size) {
+    public OptimizedPathCompressionUnionByRankDisjointSet(int size) {
         root = new int[size];
         rank = new int[size];
+
         for (int i = 0; i < size; i++) {
             root[i] = i;
             rank[i] = 1;
@@ -14,15 +15,15 @@ public class UnionByRankDisjointSet {
     }
 
     public int find(int x) {
-        while (x != root[x]) {
-            x = root[x];
+        if (x == root[x]) {
+            return x;
         }
-        return x;
+        return root[x] = find(root[x]);
     }
 
     public void union(int x, int y) {
-        int rootX = root[x];
-        int rootY = root[y];
+        int rootX = find(x);
+        int rootY = find(y);
 
         if (rootX != rootY) {
             if (rank[rootX] > rank[rootY]) {
