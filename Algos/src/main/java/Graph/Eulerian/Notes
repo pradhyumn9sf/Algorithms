@@ -1,0 +1,5 @@
+What ia an Eulerian Path ?
+An eulerian path or eulerian trail is a path of edges that visites all the edges in a graph exactly once.
+
+What ia an Eulerian circuit ?
+Similiarly like eulerian path starts and ends on the same vertex.
