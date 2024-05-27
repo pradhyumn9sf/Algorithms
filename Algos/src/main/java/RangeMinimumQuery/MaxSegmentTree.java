@@ -18,7 +18,7 @@ public class MaxSegmentTree {
     }
     int query(int ind, int low, int high, int l, int r) {
 //        fully overlap
-        if (low >= l && high <= r) {
+        if (low <= l && high <= r) {
             return segTree[ind];
         }
 //        no overlap
@@ -26,9 +26,9 @@ public class MaxSegmentTree {
             return Integer.MIN_VALUE;
         }
 //        partial overlap go in both direction
-        int mid = l + (r - l) / 2;
-        int left = query(2 * ind + 1, low, high, l, mid);
-        int right = query(2 * ind + 2, low, high, mid + 1, r);
+        int mid = low + (high - low) / 2;
+        int left = query(2 * ind + 1, low, mid, l, r);
+        int right = query(2 * ind + 2, mid + 1, high, l, r);
         return Math.max(left, right);
 
     }
