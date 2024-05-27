@@ -1,0 +1,16 @@
+It is used when we want to get data (max, min, sum or any other operation over a specific range of elements in an array.)
+for queries which is happening on some segment of array.
+O(n) to build segment tree
+O(n) to maintain segment tree
+O(logN) query
+root node index -> 0
+parent node -> i
+left child -> 2i + 1
+right child -> 2i + 2
+
+arr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+                                                                                0[0-9]
+                                                  1[0-4]                                                        2[5-9]
+                                    3[0-2]                       4[3-4]                            5[5-7]                      6[8-9]
+                             7[0-1]         8[2-2]        9[3-3]        10[4-4]            11[5-6]       12[7-7]     12[8-8]          13[9-9]
+                    15[0-0]         16[1-1]                                          23[5-5]      24[6-6]
